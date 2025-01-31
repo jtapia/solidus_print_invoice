@@ -12,12 +12,14 @@ Gem::Specification.new do |spec|
     'This extension provides a "Print Invoice" button on the ' \
     'Admin Orders view screen which generates a PDF of the order details.'
   spec.email = 'contact@solidus.io'
-  spec.homepage = 'https://github.com/jtapia/solidus_print_invoice'
+  spec.homepage = 'https://github.com/solidusio-contrib/solidus_print_invoice'
   spec.license = 'BSD-3-Clause'
 
-  spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/jtapia/solidus_print_invoice'
-  spec.metadata['changelog_uri'] = 'https://github.com/jtapia/solidus_print_invoice/releases'
+  if spec.respond_to?(:metadata)
+    spec.metadata['homepage_uri'] = spec.homepage if spec.homepage
+    spec.metadata['source_code_uri'] = spec.homepage if spec.homepage
+    # spec.metadata["changelog_uri"] = 'TODO'
+  end
 
   spec.required_ruby_version = '>= 3.0'
 
